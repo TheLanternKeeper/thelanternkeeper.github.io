@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Lantern Keeper</title>
+  <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Cardo', serif;
+      background: linear-gradient(to bottom right, #143d26, #0f2e1d);
+      color: #f0fff0;
+    }
+    h1, h2 {
+      font-family: 'Uncial Antiqua', serif;
+      color: #b0a456; /* холодный золотой */
+    }
+    h3 {
+      font-family: 'Uncial Antiqua', serif;
+      color: #f0fff0; /* светлый */
+    }
+    header {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      background: rgba(20, 61, 38, 0.7);
+    }
+    header img.decor-image {
+      max-width: 100px;
+      opacity: 0.6;
+      display: block;
+      margin: 0 auto 1rem;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+    .content {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: rgba(10, 40, 20, 0.6);
+      border-radius: 1rem;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Эльфийские иконки соцсетей */
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    .links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 3.2rem;
+      height: 3.2rem;
+      font-size: 1.6rem;
+      color: #b0a456;
+      background-color: transparent;
+      border: 2px solid #b0a456;
+      border-radius: 50%;
+      text-decoration: none;
+      box-shadow:
+        0 0 6px #b0a45688,
+        0 0 12px #b0a45655;
+      transition: color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      position: relative;
+    }
+    .links a::before,
+    .links a::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid #b0a45655;
+      top: -6px;
+      left: -6px;
+      right: -6px;
+      bottom: -6px;
+      pointer-events: none;
+      box-shadow:
+        0 0 8px #b0a45644,
+        0 0 16px #b0a45633;
+      animation: pulse 5s infinite ease-in-out;
+      opacity: 0.6;
+    }
+    .links a::after {
+      animation-delay: 2.5s;
+    }
+    .links a:hover {
+      color: #fff;
+      border-color: #f2d67b;
+      box-shadow:
+        0 0 15px #f2d67bcc,
+        0 0 30px #f2d67bcc;
+    }
+    .links a:hover::before,
+    .links a:hover::after {
+      border-color: #f2d67b99;
+      box-shadow:
+        0 0 18px #f2d67bcc,
+        0 0 40px #f2d67bcc;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.6; }
+      50% { transform: scale(1.1); opacity: 0.3; }
+    }
+
+    h2:not(:first-of-type) {
+      margin-top: 3rem;
+    }
+    ul {
+      list-style: square;
+      padding-left: 1.5rem;
+    }
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+    .decor-image {
+      display: block;
+      margin: 2rem auto;
+      max-width: 100px;
+      opacity: 0.6;
+    }
+
+    /* Новый стиль для кнопки в эльфийском стиле */
+    .contact-wp {
+      margin: 3rem 0;
+      text-align: center;
+    }
+    .whatsapp-button {
+      font-family: 'Uncial Antiqua', serif;
+      font-size: 1.3rem;
+      color: #c9b18a;
+      background: transparent;
+      border: 2px solid #c9b18a;
+      border-radius: 15px;
+      padding: 0.8rem 2rem;
+      cursor: pointer;
+      text-decoration: none;
+      position: relative;
+      box-shadow:
+        0 0 6px #c9b18a66,
+        0 0 15px #c9b18a44;
+      transition: color 0.3s ease, box-shadow 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .whatsapp-button i {
+      font-size: 1.5rem;
+      color: #a58f4a;
+      text-shadow:
+        0 0 5px #c9b18aaa,
+        0 0 10px #c9b18a99;
+    }
+    .whatsapp-button::before,
+    .whatsapp-button::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid #c9b18a66;
+      top: -8px;
+      left: -8px;
+      right: -8px;
+      bottom: -8px;
+      pointer-events: none;
+      box-shadow:
+        0 0 12px #c9b18a55,
+        0 0 24px #c9b18a33;
+      animation: pulse 4s infinite ease-in-out;
+      opacity: 0.7;
+    }
+    .whatsapp-button::after {
+      animation-delay: 2s;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.7; }
+      50% { transform: scale(1.1); opacity: 0.3; }
+    }
+    .whatsapp-button:hover {
+      color: #fff;
+      border-color: #f2d67b;
+      box-shadow:
+        0 0 12px #f2d67b88,
+        0 0 25px #f2d67bcc;
+    }
+    .whatsapp-button:hover i {
+      color: #fff;
+      text-shadow:
+        0 0 10px #f2d67b,
+        0 0 20px #f2d67b;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img class="decor-image" src="images/image1.png" alt="Celtic Symbol 1" />
+    <h1>The Lantern Keeper</h1>
+  </header>
+
+  <div class="content">
+
+    <h2>About Tarot &amp; My Approach</h2>
+    <p style="max-width: 800px; margin: 2rem auto; font-size: 1.1rem; line-height: 1.6;">
+      Tarot is not about seeing the future — it's about seeing yourself. My readings aim to help you explore patterns, 
+      reflect on situations, and better understand your own intuition and choices. Please don’t approach tarot during 
+      moments of strong emotional distress or when looking for definitive answers. I don't read on health (including 
+      mental health and pregnancy), children, pets, death, deceased people, or missing persons. Thank you for respecting 
+      these boundaries and treating tarot as a space for self-discovery rather than prediction.
+    </p>
+
+    <h2>Contact &amp; Support</h2>
+    <p>E-transfer and gift cards: <strong>elmuthalleth584@gmail.com</strong></p>
+
+        <div class="links" aria-label="Social Media Links">
+      <a href="https://www.instagram.com/the.lantern.keeper" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@thelanternkeeper" title="TikTok"><i class="fab fa-tiktok"></i></a>
+      <a href="https://discord.gg/RJnfNE9Us9" title="Discord"><i class="fab fa-discord"></i></a>
+      <a href="https://www.paypal.me/valacirca11" title="PayPal"><i class="fab fa-paypal"></i></a>
+      <a href="https://www.amazon.ca/hz/wishlist/ls/1OIJQTHD2XETL?ref_=wl_share" title="Amazon Wishlist"><i class="fas fa-gift"></i></a>
+    </div>
+
+
+
+    <h2>My Services</h2>
+    <h3>Mini Readings on LIVE</h3>
+    <ul>
+      <li>Y/N - $3</li>
+      <li>Short Reading - $7</li>
+      <li>Mini Tarot Reading - $12</li>
+      <li>Astrology/Horary Question - $18</li>
+      <li>Birth chart (short Q) - $5</li>
+    </ul>
+
+    <h3>Private Readings</h3>
+    <ul>
+      <li>1 question via DM - $4</li>
+      <li>1 hour chat (DM) - $25</li>
+      <li>30-min videochat - $30</li>
+    </ul>
+
+    <h3>Astrology</h3>
+    <ul>
+      <li>General Birth Chart - $90</li>
+      <li>Topic Birth Chart (Love, Finances, etc.) - $40</li>
+      <li>1 Astrology Question - $15</li>
+    </ul>
+
+    <h3>Weekly Readings</h3>
+    <ul>
+      <li>1 Topic - $9 (or $30/month)</li>
+      <li>General - $25 (or $80/month)</li>
+    </ul>
+
+    <div class="contact-wp">
+      <a href="https://wa.me/18254350808" target="_blank" rel="noopener" class="whatsapp-button" aria-label="Book a Consultation on WhatsApp">
+        <i class="fab fa-whatsapp"></i> Book a Consultation
+      </a>
+    </div>
+
+    <img class="decor-image" src="images/image2.png" alt="Celtic Symbol 2" />
+  </div>
+
+  <div class="footer">
+    &copy; 2025 The Lantern Keeper
+  </div>
+</body>
+</html>
