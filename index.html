@@ -56,12 +56,15 @@
     }
 
     /* Эльфийские иконки соцсетей */
-    .links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin: 1rem 0;
-    }
+.links {
+  display: flex;
+  justify-content: center; /* Добавлено */
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem auto 0;
+}
+
     .links a {
       display: inline-flex;
       align-items: center;
@@ -212,9 +215,19 @@
 </head>
 <body>
   <header>
-    <img class="decor-image" src="images/image1.png" alt="Celtic Symbol 1" />
-    <h1>The Lantern Keeper</h1>
-  </header>
+  <img class="decor-image" src="images/image1.png" alt="Celtic Symbol 1" />
+  <h1>The Lantern Keeper</h1>
+
+  <!-- Перемещённые иконки соцсетей -->
+  <div class="links" aria-label="Social Media Links">
+    <a href="https://www.instagram.com/the.lantern.keeper" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.tiktok.com/@thelanternkeeper" title="TikTok"><i class="fab fa-tiktok"></i></a>
+    <a href="https://discord.gg/RJnfNE9Us9" title="Discord"><i class="fab fa-discord"></i></a>
+    <a href="https://www.paypal.me/valacirca11" title="PayPal"><i class="fab fa-paypal"></i></a>
+    <a href="https://www.amazon.ca/hz/wishlist/ls/1OIJQTHD2XETL?ref_=wl_share" title="Amazon Wishlist"><i class="fas fa-gift"></i></a>
+  </div>
+</header>
+
 
   <div class="content">
 
@@ -230,13 +243,7 @@
     <h2>Contact &amp; Support</h2>
     <p>E-transfer and gift cards: <strong>elmuthalleth584@gmail.com</strong></p>
 
-        <div class="links" aria-label="Social Media Links">
-      <a href="https://www.instagram.com/the.lantern.keeper" title="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.tiktok.com/@thelanternkeeper" title="TikTok"><i class="fab fa-tiktok"></i></a>
-      <a href="https://discord.gg/RJnfNE9Us9" title="Discord"><i class="fab fa-discord"></i></a>
-      <a href="https://www.paypal.me/valacirca11" title="PayPal"><i class="fab fa-paypal"></i></a>
-      <a href="https://www.amazon.ca/hz/wishlist/ls/1OIJQTHD2XETL?ref_=wl_share" title="Amazon Wishlist"><i class="fas fa-gift"></i></a>
-    </div>
+
 
 
 
